@@ -97,7 +97,7 @@ communication：移动设备通常会不在线，或是有着较高的通信代�
 <p>FedSGD可视为FedAvg中Client epoch=1的特殊情况</p>
 </blockquote>
 <h2 id="fedavg">2.2 FedAvg</h2>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231205155635549.png" alt="image-20231205155635549" style="zoom:50%;"></p>
+<p><img src="./image-20231205155635549.png" alt="image-20231205155635549" style="zoom:50%;"></p>
 <blockquote>
 <p>区别于FedSGD，FedAvg在Client端的epoch可以有多次</p>
 </blockquote>
@@ -112,13 +112,13 @@ William Shakespeare）</p>
 <p>这部分实验是为了说明Non-IID会导致模型性能的下降，但同时可以看到，<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.719ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 760 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g></g></g></svg></mjx-container></span>的值并不一定是越大越好。</p>
 <p>PS：这篇文章中Non-IID的划分方法为：按照label对数据集进行排序，然后均分为200份（一份有300张图片），然后每个Client分发两份。现阶段可用Dirchlet
 Distribution进行更合理的划分</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231215145707819.png" alt="image-20231215145707819" style="zoom:33%;"></p>
+<p><img src="./image-20231215145707819.png" alt="image-20231215145707819" style="zoom:33%;"></p>
 <blockquote>
 <p>C：单个round中参与更新的Client的百分比（0代表只有一个Client参与）；E：Client在单次round中本地更新的epoch数量；B：Client的batch
 size</p>
 </blockquote>
 <p>FedSGD和FedAvg在MNIST-CNN和SHAKESPEARE-LSTM上的对比实验</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231215151247539.png" alt="image-20231215151247539" style="zoom: 50%;"></p>
+<p><img src="./image-20231215151247539.png" alt="image-20231215151247539" style="zoom: 50%;"></p>
 <blockquote>
 <p>u: 单个round中各个client epoch的和</p>
 </blockquote>
@@ -129,19 +129,19 @@ size</p>
 size或者增加epoch，观察对收敛效果的影响</p>
 <p>上侧图是MNIST-CNN，下侧图是SHAKESPEARE-LSTM，灰线是target
 accuracy</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231215152220265.png" alt="image-20231215152220265" style="zoom:50%;"></p>
+<p><img src="./image-20231215152220265.png" alt="image-20231215152220265" style="zoom:50%;"></p>
 <p><strong>Client Epoch</strong></p>
 <p>固定learning
 rate=1.47，C=0.1，B=10（小批量确保收敛），调整E，还是基于上述两种场景实验</p>
 <p>可以看到E=5时效果最好，并不是越大或者越小越好</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231215152731759.png" alt="image-20231215152731759" style="zoom:50%;"></p>
+<p><img src="./image-20231215152731759.png" alt="image-20231215152731759" style="zoom:50%;"></p>
 <p><strong>CIFAR 10 Experiment</strong></p>
 <p>在不同学习率的情况下FedAvg相较于FedSGD都有更快的收敛速度</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231215153020589.png" alt="image-20231215153020589" style="zoom:50%;"></p>
+<p><img src="./image-20231215153020589.png" alt="image-20231215153020589" style="zoom:50%;"></p>
 <p><strong>更大的语言测试数据</strong></p>
 <p>从社交网络采集的大小为1000万的训练集，进行Next Word
 Prediction，FedAvg的收敛速度和最终准确率也均高于FedSGD，且方差更小</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image-20231215153317785.png" alt="image-20231215153317785" style="zoom:50%;"></p>
+<p><img src="./image-20231215153317785.png" alt="image-20231215153317785" style="zoom:50%;"></p>
 <blockquote>
 <p>在这种场景下，FedAvg上E=1的效果略优于E=5</p>
 </blockquote>
