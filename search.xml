@@ -10,22 +10,16 @@
 href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash
 for Windows</a>，选择Linux版本，release的后缀如下图所示</p>
 <figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="./image-20231102004612219.png"
+<img src="./image-20231102004612219.png"
 alt="image-20231102004612219" />
 <figcaption aria-hidden="true">image-20231102004612219</figcaption>
 </figure>
 <p>找到下载文件，并在下载文件所在的位置打开命令行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf Clash.for.Windows-0.20.22-x64-linux.tar.gz</span><br><span class="line"><span class="comment"># 重命名</span></span><br><span class="line"><span class="built_in">mv</span> Clash.for.Windows-0.20.39-x64-linux clash</span><br><span class="line"><span class="comment"># 进入clash目录</span></span><br><span class="line"><span class="built_in">cd</span> clash</span><br><span class="line"><span class="comment"># 执行cfw命令，即可打开clash界面</span></span><br><span class="line">./cfw</span><br></pre></td></tr></table></figure>
 <p>打开的clash界面如下图所示，可以看到和Windows界面一致</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="./clashgui.png" alt="clashgui" />
-<figcaption aria-hidden="true">clashgui</figcaption>
-</figure>
+<p><img src="./clashgui.png" alt="clashgui" style="zoom: 80%;" /></p>
 <p>设置系统网络代理模式，如下图所示</p>
-<figure>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="./ubuntu_proxy.png" alt="ubuntu_proxy" />
-<figcaption aria-hidden="true">ubuntu_proxy</figcaption>
-</figure>
+<p><img src="./ubuntu_proxy.png" alt="ubuntu_proxy" style="zoom:80%;" /></p>
 <p>创建clash应用程序</p>
 <blockquote>
 <p>创建clash应用程序后会在菜单里出现一个clash的应用图标，以后只需点击即可运行，否则每次仍需定位到clash文件夹所在位置并执行./cfw命令才能启动clash，较为麻烦</p>
